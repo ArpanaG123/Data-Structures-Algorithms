@@ -1,4 +1,4 @@
-# Write a program to cyclically rotate an array by one.
+# Write a program to cyclically rotate an array by one. - clockwise direction.
 # Link - https://practice.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one/0
 
 arr = [1,2,3,4,5]
@@ -20,6 +20,20 @@ def rotate(arr):
 
 res = rotate(arr)
 print(res)
+
+# TC = 0(N)
+# SC = 0(1)
+
+# Write a program to cyclically rotate an array by one. - Anticlockwise direction.
+arr = [1,2,3,4,5]
+
+n = len(arr)
+first_element = arr[0]
+
+for i in range(0,n-1):
+    arr[i] = arr[i+1]
+arr[n-1] = first_element
+print(arr)
 
 # TC = 0(N)
 # SC = 0(1)
