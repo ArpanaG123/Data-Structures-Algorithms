@@ -34,3 +34,6 @@ for i in range(32):
         if sm % 3 != 0:
             res = res | 1 << i
 print(res)
+
+# TC = 0(N)
+# SC = 0(1)
