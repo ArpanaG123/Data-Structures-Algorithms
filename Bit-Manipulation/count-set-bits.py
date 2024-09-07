@@ -94,3 +94,33 @@ while n != 0:
     n = n >> 1
 
 print(f"Number of set bits are: {count}")
+
+# Type4
+# Count total set bits
+# You are given a number n. Find the total count of set bits for all numbers from 1 to n(both inclusive).
+
+n = 4
+# Output: 5
+# Explanation: For numbers from 1 to 4. For 1: 0 0 1 = 1 set bits For 2: 0 1 0 = 1 set bits For 3: 0 1 1 = 2 set bits For 4: 1 0 0 = 1 set bits Therefore, the total set bits is 5.
+
+def countSetBits(n):
+    # Helper function to count the number of set bits in numbers from 0 to n
+    def count_bits(x):
+        if x < 0:
+            return 0
+        count = 0
+        shift = 1
+        while shift <= x:
+            full_blocks = (x + 1) // (shift * 2)
+            count += full_blocks * shift
+            remainder = (x + 1) % (shift * 2)
+            count += max(0, remainder - shift)
+            shift <<= 1
+        return count
+    
+    return count_bits(n)
+
+# Example usage
+n = 17
+print(countSetBits(n))  # Output should be 35
+

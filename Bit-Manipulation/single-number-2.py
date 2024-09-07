@@ -31,8 +31,12 @@ for i in range(32):
     for num in nums:
         if (num >> i) & 1 == 1:
             sm += 1
-        if sm % 3 != 0:
-            res = res | 1 << i
+    if sm % 3 != 0:
+        res = res | 1 << i
+
+if res >= 2**31:
+    res -= 2**32
+
 print(res)
 
 # TC = 0(N)
