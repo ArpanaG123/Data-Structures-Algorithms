@@ -20,8 +20,8 @@ while n != 0:
         res.append("0")
 
     n = n//2
-res.reverse()
-binary = "".join(map(str,res))
+
+binary = "".join(res)
 print(binary)
 
 for i in range(0,len(binary)):
