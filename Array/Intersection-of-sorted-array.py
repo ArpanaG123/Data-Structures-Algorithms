@@ -46,6 +46,9 @@ nums2 = [9,4,9,8,4]
 # Output: [4,9]
 # Explanation: [9,4] is also accepted.
 
+# Type2
+nums1 = [1,2,2,1]
+nums2 = [2,2]
 freq = {}
 res = []
 
@@ -63,4 +66,30 @@ for i in nums2:
 print(res)
 print(len(res))
 
+# Intersection of two sorted arrays
+
+arr1 = [1, 2, 2, 3, 3, 4, 5, 6]
+arr2 = [2, 3, 3, 5, 6, 6, 7]
+
+n1 = len(arr1)
+n2 = len(arr2)
+
+i = 0
+j = 0
+
+ans = []
+while i < n1 and j < n2:
+    if arr1[i] < arr2[j]:
+        i += 1
+    elif arr1[i] > arr2[j]:
+        j += 1
+    else:
+        ans.append(arr1[i])
+        i += 1
+        j += 1
+
+print(ans)
+
+# TC = 0(N1+N2)
+# SC = 0(1)
         

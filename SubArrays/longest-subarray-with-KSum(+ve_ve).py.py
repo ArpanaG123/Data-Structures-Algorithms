@@ -1,6 +1,7 @@
 # Longest subarray with sum K (Positives + Negatives).
 # Link - https://www.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
 
+# Handled all cases as positive, negative and zero
 arr = [1, 12, 18, 13, 8, -2, 12, -1, -10, 6, 3, -14, 0 ,4,10, 0, -7, 3, -12, 18]
 K = 30
 

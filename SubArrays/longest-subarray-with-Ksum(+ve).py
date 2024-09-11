@@ -98,3 +98,41 @@ for i in range(0,n):
 print(f"longest subarray length:{max_len}")
 print(f"Longest subbarray with sum k is from: {start_idx} to {end_idx}")
 print(f"Longest subarray with sum k has elements:{arr[start_idx:end_idx+1]}")
+
+# Most optimal for positive and zero only - using two pointer
+
+# arr = [1,2,3,1,1,1,1,3,3]
+arr = [2,0,0,3]
+K = 3
+
+n = len(arr)
+
+left = 0
+right = 0
+start = -1
+end = -1
+sm = arr[0]
+mx = 0
+
+while right < n:
+    while left <= right and sm > K:
+        sm -= arr[left]
+        left += 1
+    
+    if sm == K:
+        if right-left+1 > mx:
+            mx = max(mx,right-left+1)
+            start = left
+            end = right
+    
+    right += 1
+    if right < n :
+        sm += arr[right]
+        
+            
+print(f"longest subarray length:{mx}")
+print(f"Longest subbarray with sum k is from: {start} to {end}")
+print(f"Longest subarray with sum k has elements:{arr[start:end+1]}")
+
+# TC = 0(2N)
+# SC = 0(1)
