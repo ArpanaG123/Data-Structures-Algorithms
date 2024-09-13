@@ -10,23 +10,45 @@ nums = [3,2,3]
 nums = [3, 2, 2]
 n = len(nums)
 
-res = []
 
 # Brute force method to count the elements
-for i in range(n):
+arr = [2,2,3,3,1,2,2]
+n = len(arr)
+
+for i in range(0,n):
     cnt = 0
-    for j in range(n):
-        if nums[i] == nums[j]:
+    for j in range(0,n):
+        if arr[i] == arr[j]:
             cnt += 1
-    
-    # If count is >= n // 2 and element not already in the result
-    if cnt >= n // 2 and nums[i] not in res:
-        res.append(nums[i])
 
-print("Elements with count >= n//2:", res)
-print("Total number of such elements:", len(res))
+    if cnt > n/2:
+        print(arr[i])
+        break
+else:
+    print(-1)
 
-# Method2 - using moore's voting algotithm
+# Better approach - using hashing
+
+arr = [2,2,3,3,1,2,2]
+
+n = len(arr)
+
+freq = {}
+
+for i in arr:
+    if i in freq:
+        freq[i] += 1
+    else:
+        freq[i] = 1
+
+for k,v in freq.items():
+    if v > n//2:
+        print(k)
+
+# TC = 0(N)
+# SC = 0(N)
+
+#optimal - using moore's voting algotithm
 nums = [1,2,2]
 
 n = len(nums)

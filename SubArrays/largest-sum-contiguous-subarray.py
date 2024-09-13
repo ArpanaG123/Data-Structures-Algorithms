@@ -1,4 +1,4 @@
-# find Largest sum contiguous Subarray. [V. IMP]
+# find Largest sum contiguous Subarray. [V. IMP],kadanes's algorithm
 # Link - https://practice.geeksforgeeks.org/problems/kadanes-algorithm/0
 # Link2 - https://leetcode.com/problems/maximum-subarray/description/
 
@@ -18,6 +18,29 @@ for i in range(0,n):
         sm = sum(subarrays)
         res.append(sm)
 print(max(res))
+
+# Type - 2
+arr = [-2,-3,4,-1,-2,1,5,-3]
+n = len(arr)
+start = -1
+end = -1
+mx = float('-inf')
+for i in range(0,n):
+    for j in range(i,n):
+        sm = 0
+        for k in range(i,j+1):
+            sm += arr[k]
+            
+        if sm > mx:
+            mx = sm
+            start = i
+            end = j+1
+            
+print(f"largest sum is: {mx}")
+print(f"elements are:{arr[start:end]}")
+
+# largest sum is: 7
+# elements are:[4, -1, -2, 1, 5]
 
 # Time Complexity: O(n^3)
 # Space Complexity: O(n^2)
