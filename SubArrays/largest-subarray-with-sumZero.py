@@ -37,7 +37,7 @@ else:
 # TC = 0(N^3)
 # SC = 0(1)
 
-# Method2 - Improved Brute force
+# Method2 - Improved Brute force(Better)
 
 arr = [15,-2,2,-8,1,7,10,23]
 n = len(arr)
