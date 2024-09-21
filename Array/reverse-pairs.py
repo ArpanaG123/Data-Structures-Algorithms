@@ -6,7 +6,7 @@
 # A reverse pair is a pair (i, j) where:
 # 0 <= i < j < nums.length and
 # nums[i] > 2 * nums[j].
- 
+
 
 nums = [1,3,2,3,1]
 # Output: 2
