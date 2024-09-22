@@ -6,6 +6,30 @@
 nums = [5,7,7,8,8,10], target = 8
 # Output: [3,4]
 
+# Linear search
+nums = [5,7,7,8,8,10]
+target = 8
+
+n = len(nums)
+
+first = -1
+last = -1
+
+for i in range(0,n):
+    if nums[i] == target:
+        first = i
+        break
+    
+for i in range(n-1,-1,-1):
+    if nums[i] == target:
+        last = i
+        break
+print([first,last])
+
+# TC = 0(N) + 0(N)
+
+# Using binary search
+
 nums = [5,7,7,8,8,10]
 target = 8
 # Output: [3,4]
