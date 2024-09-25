@@ -10,3 +10,76 @@ piles = [3,6,7,11]
 h = 8
 # Output: 4
 
+# Brute force
+
+import math
+
+piles = [3,6,7,11]
+h = 8
+
+def calculateTotalHours(piles, hourly):
+    totalH = 0
+    n = len(piles)
+    # Find total hours
+    for i in range(n):
+        totalH += math.ceil(piles[i] / hourly)
+    return totalH
+
+def minEatingSpeed(piles,h):
+    n = len(piles)
+    mx = max(piles)
+    
+    for i in range(1,mx+1):
+        reqTime = calculateTotalHours(piles,i)
+        
+        if reqTime <= h:
+            return i
+          
+ans = minEatingSpeed(piles, h)
+print(ans)
+
+# TC = 0(max(piles)*N)
+# sc = 0(1)
+
+# Optimised approach
+
+import math
+
+piles = [3,6,7,11]
+h = 8
+
+def totalHours(piles,speed):
+    n = len(piles)
+    
+    totalH = 0
+    for i in range(0,n):
+        totalH += math.ceil(piles[i]/speed)
+    
+    return totalH
+
+def minEatingSpeed(piles,h):
+
+    mx = max(piles)
+    
+    low = 1
+    high = mx
+    
+    ans = float('inf')
+    
+    while low < high:
+        mid = (low+high)//2
+        
+        hours = totalHours(piles,mid)
+        
+        if hours <= h:
+            ans = mid
+            high = mid - 1
+        else:
+            low = mid + 1
+    
+    return ans
+          
+ans = minEatingSpeed(piles, h)
+print(ans)
+
+# TC = 0(N * logN)
