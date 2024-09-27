@@ -16,3 +16,6 @@ n = 4
 m = 2 
 arr = [12, 34, 67, 90]
 # Output: 113
+
+# Note - book allocation,painter's partition and split array - largest sum : all question and concept are same.
+# Level:hard
