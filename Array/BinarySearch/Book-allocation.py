@@ -19,3 +19,81 @@ arr = [12, 34, 67, 90]
 
 # Note - book allocation,painter's partition and split array - largest sum : all question and concept are same.
 # Level:hard
+
+# Brute force/linear search
+
+arr = [25,46,28,49,24]
+m = 4
+
+def findNumberOfStduents(arr,pages):
+    n = len(arr)
+    students = 1
+    pagesStudents = 0
+    
+    for i in range(n):
+        if pagesStudents + arr[i] <= pages:
+            pagesStudents += arr[i]
+        else:
+            students += 1
+            pagesStudents = arr[i]
+    
+    return students
+            
+    
+def findPages(arr,m):
+    low = max(arr)
+    high = sum(arr)
+    
+    for p in range(low,high+1):
+        if findNumberOfStduents(arr,p) == m:
+            return p
+    return -1
+    
+res = findPages(arr,m)
+print(res)
+
+# TC = 0((max(arr)-sum(arr))*n)
+# SC = 0(1)
+
+
+# Optimal approach using binary search
+
+arr = [25,46,28,49,24]
+m = 4
+
+def findNumberOfStduents(arr,pages):
+    n = len(arr)
+    students = 1
+    pagesStudents = 0
+    
+    for i in range(n):
+        if pagesStudents + arr[i] <= pages:
+            pagesStudents += arr[i]
+        else:
+            students += 1
+            pagesStudents = arr[i]
+    
+    return students
+            
+    
+def findPages(arr,m):
+    low = max(arr)
+    high = sum(arr)
+    
+    while low <= high:
+        mid = (low+high)//2
+        
+        cntStudents = findNumberOfStduents(arr,mid)
+        
+        if cntStudents > m:
+            low = mid + 1
+        else:
+            high = mid - 1
+            
+    return low
+    
+res = findPages(arr,m)
+print(res)
+
+# TC = 0(log(max(arr) - sum(arr)) * 0(N))
+# sc = 0(1)
