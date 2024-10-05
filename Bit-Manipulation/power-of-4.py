@@ -31,3 +31,24 @@ def is_power_of_4(n):
 n = 16  # Example
 print(is_power_of_4(n))  # True, since 16 is a power of 4
 
+# Optimised way
+def is_power_of_4(n):
+    if n <= 0 :
+        return False
+    
+    if n & (n-1) != 0:
+        return False
+    
+    count_trailing_zero = 0
+    while n & 1 == 0:
+        n = n>>1
+        count_trailing_zero += 1
+    
+    if count_trailing_zero % 2 == 0:
+        return True
+    return False
+
+n = 16
+result = is_power_of_4(n)
+print(result)
+
