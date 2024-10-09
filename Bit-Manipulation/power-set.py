@@ -37,3 +37,19 @@ for i in range(1, total_subset):  # Start from 1 to avoid the empty subset
 ans.sort()
 
 print(ans)  
+
+# sum of xor of all subsets
+
+nums = [1,5,6]
+
+n = len(nums)
+total = 1<<n
+sm = 0
+
+for i in range(total):
+    curr = 0
+    for j in range(n):
+        if i & (1<<j):
+            curr = curr ^ nums[j]
+    sm += curr
+print(sm)
