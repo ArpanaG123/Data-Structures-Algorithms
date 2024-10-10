@@ -13,3 +13,21 @@ r = 3
 # in y at 3'rd position (in given range). 
 # After we copy this bit to x, x becomes 1110
 # which is binary representation of 14.
+
+def copySetBit(x,y,l,r):
+    if l < 1 or r > 32:
+        return x
+    
+    for i in range(l,r+1):
+        bit_mask = 1 <<(i-1)
+        
+        if bit_mask & y != 0:
+            x = x | bit_mask
+    return x
+
+x = 10
+y = 13
+l = 2
+r = 3
+result = copySetBit(x,y,l,r)
+print(result)
