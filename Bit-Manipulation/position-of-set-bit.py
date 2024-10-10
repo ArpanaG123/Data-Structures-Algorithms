@@ -10,17 +10,33 @@
 # and it's in Position 2 and thus the
 # Output 2.
 
-n = 2
+# Brute force
+n = 12
 
-if n == 0:
-    print(-1)
+def findPositionOfSetbit(n):
+    bit = bin(n)[2:]
+    
+    sz = len(bit)
+    
+    for i in range(sz-1,-1,-1):
+        if bit[i] == "1":
+            return (sz-i)
+            
+result = findPositionOfSetbit(n)
+print(result)
 
-if n & n-1 != 0:
-    print(-1)
+# Optimal
+n = 12
 
-pos = 1
-
-while n > 1:
-    n = n >> 1
-    pos += 1
-print(pos)
+def findPositionOfSetbit(n):
+    if n == 0:
+        return -1
+    
+    pos = 1
+    while n & 1 == 0:
+        n = n>>1
+        pos += 1
+    return pos
+            
+result = findPositionOfSetbit(n)
+print(result)
