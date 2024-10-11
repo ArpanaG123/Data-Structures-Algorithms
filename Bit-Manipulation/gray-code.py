@@ -11,3 +11,27 @@
 
 n = 2
 # Output: [0,1,3,2]
+
+# Topic - recusion and backtracking
+
+def greyCode(n):
+    if n == 0:
+        return [0]
+    
+    if n == 1:
+        return [0,1]
+    
+    res = []
+
+    prev_code = greyCode(n-1)
+
+    for code in prev_code:
+        res.append(code)
+
+    for code in reversed(prev_code):
+        res.append((1<<(n-1))+code)
+
+    return res
+
+result = greyCode(n)
+print(result)

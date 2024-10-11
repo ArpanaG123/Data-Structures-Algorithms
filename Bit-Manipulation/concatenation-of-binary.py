@@ -39,3 +39,20 @@ def concatenatedBinary(self, n: int) -> int:
     res = int(binary,2)
 
     return res % (10**9 + 7)
+
+#Efficient
+def concatenatedBinary(n):
+    res = 0
+    bit_len = 0
+    MOD = 10**9 + 7
+
+    for i in range(1,n+1):
+        if i & i-1 == 0:
+            bit_len += 1
+        
+        res = ((res << bit_len) | i)%MOD
+    return res
+
+n = 3
+result = concatenatedBinary(n)
+print(result)
