@@ -43,3 +43,22 @@ print(i+1)
 
 # TC = 0(N)
 # SC = 0(1)
+# Output = size of array = 5 = [0,1,2,3,4]
+
+def removeDuplicates(nums):
+
+    n = len(nums)
+    i = 0
+
+    for j in range(1,n):
+        if nums[i] != nums[j]:
+            nums[i+1] = nums[j]
+            i += 1
+    
+    return nums[:i+1]
+    
+nums = [0,0,1,1,1,2,2,3,3,4]
+result = removeDuplicates(nums)
+print(result)
+
+# output = [0, 1, 2, 3, 4]

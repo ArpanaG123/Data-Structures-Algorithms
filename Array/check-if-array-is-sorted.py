@@ -17,7 +17,7 @@ else:
 # TC = 0(N)
 # SC = 0(1)
 
-#  Check if Array Is Sorted and Rotated
+# Check if Array Is Sorted and Rotated
 # LINK - https://leetcode.com/problems/check-if-array-is-sorted-and-rotated/description/
 
 # case1 = array is sorted = 1,2,3,4,5 if arr[last] > arr[0] = True

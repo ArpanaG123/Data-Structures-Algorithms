@@ -2,6 +2,7 @@
 
 # Link - https://practice.geeksforgeeks.org/problems/cyclically-rotate-an-array-by-one/0
 
+# clockwise = [5,1,2,3,4]
 arr = [1,2,3,4,5]
 def rotate(arr):
     n = len(arr)
@@ -26,6 +27,7 @@ print(res)
 # SC = 0(1)
 
 # Write a program to cyclically rotate an array by one. - Anticlockwise direction.
+# [2,3,4,5,1]
 arr = [1,2,3,4,5]
 
 n = len(arr)
