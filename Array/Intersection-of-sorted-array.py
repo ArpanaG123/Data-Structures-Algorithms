@@ -92,4 +92,40 @@ print(ans)
 
 # TC = 0(N1+N2)
 # SC = 0(1)
+
+# using two pointer for unique elements only
+# leetcode - 349
+def intersection(nums1,nums2):
+    nums1.sort()
+    nums2.sort()
         
+    n = len(nums1)
+    m  = len(nums2)
+
+    i = 0
+    j = 0
+
+    ans = []
+    while i < n and j < m:
+        if nums1[i] < nums2[j]:
+            i += 1
+        elif nums1[i] > nums2[j]:
+            j += 1
+        else:
+            if not ans or ans[-1] != nums1[i]:
+                ans.append(nums1[i])
+            i += 1
+            j += 1
+
+    return ans
+
+nums1 = [1,2,2,1]
+nums2 = [2,2]
+# Output: [2]
+
+nums1 = [4,9,5]
+nums2 = [9,4,9,8,4]
+# Output: [9,4]
+
+result = intersection(nums1,nums2)
+print(result)
