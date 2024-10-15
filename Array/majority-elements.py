@@ -52,7 +52,6 @@ for k,v in freq.items():
 nums = [1,2,2]
 
 n = len(nums)
-
 candidate = nums[0]
 cnt = 0
 
@@ -65,3 +64,6 @@ for i in range(n):
         cnt -= 1
 
 print("Candidates count with greater than n//2:",candidate)
+
+# TC = 0(N)
+# SC = 0(1)
