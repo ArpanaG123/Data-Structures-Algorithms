@@ -1,5 +1,5 @@
 # Rearrange Array Elements by Sign
-# Link  - https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
+# Link - https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
 
 # You should return the array of nums such that the the array follows the given conditions:
 # Every consecutive pair of integers have opposite signs.
@@ -12,8 +12,6 @@ nums = [3,1,-2,-5,2,-4]
 # Output: [3,-2,1,-5,2,-4]
 
 # Brute force
-
-
 arr = [3,1,-2,-5,2,-4]
 
 n = len(arr)
@@ -25,8 +23,7 @@ for i in range(0,n):
         pos_el.append(arr[i])
     else:
         neg_el.append(arr[i])
-        
-        
+                
 for i in range(0,n//2):
     arr[2*i] = pos_el[i]
     arr[2*i+1] = neg_el[i]
@@ -36,7 +33,6 @@ print(arr)
 # SC = 0(N/2) + 0(N/2) = 0(N)
 
 # Optimal approach
-
 arr = [3,1,-2,-5,2,-4]
 
 n = len(arr)
@@ -62,7 +58,6 @@ arr = [-1,2,3,4,-3,1]
 arr = [2,1,4,-7,-1,-3,3,-5,-8,-6]
 n = len(arr)
 
-
 posIdx = []
 negIdx = []
 
@@ -72,7 +67,6 @@ for i in range(0,n):
     else:
         posIdx.append(arr[i])
         
-
 l = len(posIdx)
 m = len(negIdx)
 

@@ -50,46 +50,49 @@ print(list(ans))
 
 # using moore's agorithm
 
-def mooreVoting(arr):
-    n = len(arr)
-    
-    # Step 1: Find two potential candidates for majority element
-    candidate1, candidate2 = None, None
-    count1, count2 = 0, 0
-    
-    for num in arr:
-        if candidate1 == num:
-            count1 += 1
-        elif candidate2 == num:
-            count2 += 1
-        elif count1 == 0:
-            candidate1 = num
-            count1 = 1
-        elif count2 == 0:
-            candidate2 = num
-            count2 = 1
-        else:
-            count1 -= 1
-            count2 -= 1
-    
-    # Step 2: Verify the candidates by counting their actual occurrences
-    count1, count2 = 0, 0
-    for num in arr:
-        if num == candidate1:
-            count1 += 1
-        elif num == candidate2:
-            count2 += 1
-    
-    # Step 3: Return the candidates that appear more than n // 3 times
-    result = []
-    if count1 > n // 3:
-        result.append(candidate1)
-    if count2 > n // 3:
-        result.append(candidate2)
-    
-    return result
+nums = [1,1,1,3,3,2,2,2]
+# output = [1,2]
 
-# Example usage
-arr = [1, 1, 1, 3, 3, 2, 2, 2]
-result = mooreVoting(arr)
+def majorityElement(nums):
+    n = len(nums)
+    
+    cnt1 = 0
+    cnt2 = 0
+    
+    el1 = float('-inf')
+    el2 = float('-inf')
+    
+    for i in range(n):
+        if cnt1 == 0 and nums[i] != el2:
+            cnt1 = 1
+            el1 = nums[i]
+        elif cnt2 == 0 and nums[i] != el1:
+            cnt2 = 1
+            el2 = nums[i]
+        elif nums[i] == el1:
+            cnt1 += 1
+        elif nums[i] == el2:
+            cnt2 += 1
+        else:
+            cnt1 -= 1
+            cnt2 -= 1
+            
+    count1 = 0
+    count2 = 0
+    
+    for i in range(n):
+        if nums[i] == el1:
+            count1 += 1
+        elif nums[i] == el2:
+            count2 += 1
+    
+    res = []
+    if count1 > n//3:
+        res.append(el1)
+    if count2 > n//3:
+        res.append(el2)
+        
+    return res
+
+result = majorityElement(nums)
 print(result)
