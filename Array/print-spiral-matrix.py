@@ -18,7 +18,6 @@ right = m-1
 bottom = n-1
 
 ans = []
-
 while left <= right and top <= bottom:
     for i in range(left,right+1):
         ans.append(mat[top][i])
@@ -37,7 +36,6 @@ while left <= right and top <= bottom:
         for i in range(bottom,top-1,-1):
             ans.append(mat[i][left])
         left += 1
-
 print(ans)
 
 # TC = 0(N*M)
