@@ -23,3 +23,29 @@ print("Original array:", arr)
 
 insertionSort(arr)
 print("Sorted array:", arr)
+
+# second way
+
+def insert(alist, index, n):
+    #code here
+    key = alist[index]
+    j = index-1
+        
+    while j >= 0 and alist[j] > key:
+        alist[j+1] = alist[j]
+        j -= 1
+    alist[j+1] = key
+        
+#Function to sort the list using insertion sort algorithm.    
+def insertionSort(alist, n):
+    #code here
+    n = len(alist)
+    for i in range(1,n):
+        insert(alist,i,n)
+        
+    return alist
+
+alist = [2,1,5,4,3]
+n = len(alist)
+result = insertionSort(alist,n)
+print(result)

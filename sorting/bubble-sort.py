@@ -1,4 +1,5 @@
 # Bubble sort
+# Practice Link - https://www.geeksforgeeks.org/problems/bubble-sort/1
 
 arr = [4,3,5,7,2,1]
 
@@ -10,4 +11,5 @@ for i in range(0,n):
             arr[j],arr[j+1] = arr[j+1],arr[j]
 print(arr)
 
-# TC = 0(N^2)
+# Time Complexity: O(n^2)
+# Auxiliary Space: O(1)
