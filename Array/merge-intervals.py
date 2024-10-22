@@ -43,7 +43,7 @@ result = merge_intervals(intervals)
 print(result)
 
 # TC = 0(nlogn + n^2)
-# sc = 0(n) = to store the ans
+# sc = 0(n) = to store the ans to just return the answer.
 
 # Optimal approach
 def merge_intervals(intervals):
