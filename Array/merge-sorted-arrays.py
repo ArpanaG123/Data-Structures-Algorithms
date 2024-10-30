@@ -81,7 +81,7 @@ arr2.sort()
 
 print(arr1 + arr2)
 
-# TC = 0(min(n,m)) + 0(nlogn) + 0(mlogm)
+# TC = 0(min(n,m)) + 0(nlogn) + 0(mlogm), where n is size of array1 and m is the size of array2 and logarithm is for sorting.
 # SC = 0(1)
 
 # Type2 - 
