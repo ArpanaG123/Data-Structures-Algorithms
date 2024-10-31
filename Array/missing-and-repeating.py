@@ -93,7 +93,11 @@ def findMissingRepeatingNumbers(a):
 result = findMissingRepeatingNumbers(a)
 print(result)
 
-# TC = 0(1)
+# TC = 0(N)
 # SC = 0(1)
+
+# Time Complexity and Space Complexity:
+# Time Complexity: O(n), because we only loop through the array once to calculate the sum and sum of squares.
+# Space Complexity: O(1), as no extra space is used apart from a few variables.
 
 
