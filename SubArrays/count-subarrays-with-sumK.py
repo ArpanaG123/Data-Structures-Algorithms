@@ -57,6 +57,7 @@ n = len(nums)
 count = 0
 sm = 0
 
+# This ensures that if the cumulative sum sm equals to k at any point, a valid subarray is found right from the beginning.
 freq = {0:1}
 
 for i in range(0,n):
