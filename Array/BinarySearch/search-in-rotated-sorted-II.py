@@ -23,7 +23,10 @@ def search(nums,target):
 
         if nums[mid] == target:
             return True
-            
+        
+        # If the elements at 'low', 'mid', and 'high' are all the same,
+        # we cannot determine the sorted part, so we reduce the search space
+        # by moving both pointers inward
         if nums[low] == nums[mid] == nums[high]:
             low += 1
             high -= 1  
