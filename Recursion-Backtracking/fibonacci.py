@@ -1,6 +1,6 @@
 # Fibonacci number
 
-# using recursion
+# Approach1 - using recursion
 def fib(n):
     if n <= 1:
         return n
@@ -11,7 +11,7 @@ n = 3
 result = fib(n)
 print(result)
 
-# using loop
+# Approach2 - using loop
 def fib(n):
     f1 = 0
     f2 = 1
