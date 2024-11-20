@@ -11,3 +11,6 @@ num_bit = n.bit_length()
 bit_mask = (1 << num_bit) - 1
 
 print(bit_mask ^ n)
+
+# left shift  = multiplication 2^k
+# right shift = divide 2^k,where k is the number of shifts

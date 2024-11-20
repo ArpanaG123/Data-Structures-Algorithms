@@ -31,3 +31,6 @@ while l != r:
     r = r>>1
     cnt += 1
 print(l<<cnt)
+
+# TC = O(Log(Max(Left,Right)))
+# sc = 0(1) - auxiliary space
