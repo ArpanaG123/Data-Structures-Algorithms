@@ -1,4 +1,5 @@
 # Power of 3
+# Link - https://leetcode.com/problems/power-of-three/description/
 
 n = 16
 # output = False

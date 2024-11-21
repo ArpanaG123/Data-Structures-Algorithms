@@ -1,4 +1,5 @@
 # Power of 2
+# Link - https://leetcode.com/problems/power-of-two/description/
 
 n = 16
 # output = True
