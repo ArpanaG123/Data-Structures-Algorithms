@@ -12,7 +12,7 @@
 # Input: nums = [3,1,3,4,2]
 # Output: 3
 
-# Brute force
+# Approach1 - Brute force
 
 def findDuplicate(nums):
  
@@ -33,7 +33,29 @@ print(result)
 # TC = 0(N^2)
 # SC = 0(1)
 
-# Optimal
+# Approach2 - Better using hashing
+
+def findDuplicate(nums):
+    freq = {}
+    for num in nums:
+        if num in freq:
+            freq[num] += 1
+        else:
+            freq[num] = 1
+    
+    for k,v in freq.items():
+        if v >= 2:
+            return k
+
+nums = [3,1,3,4,2]
+result = findDuplicate(nums)
+print(result)
+
+# TC = 0(N)
+# SC = 0(N)
+
+
+# Approach3 - Optimal
 
 def findDuplicate(nums):
     nums.sort()
