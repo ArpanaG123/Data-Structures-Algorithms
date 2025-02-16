@@ -95,10 +95,9 @@ def deleteElementInLL(head,el):
         return None
     
     if head.data == el:
-        temp = head
-        head = head.next
-        temp = None
-        return head
+        temp = head.next
+        head = None
+        return temp
     
     prev = None
     temp = head
