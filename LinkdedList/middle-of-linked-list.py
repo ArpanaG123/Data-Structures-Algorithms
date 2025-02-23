@@ -122,5 +122,5 @@ print("Middle Linked list:")
 printLinkedList(head)
 
 
-# TC = 0(N)
+# TC = 0(N/2)
 # SC = 0(1)
