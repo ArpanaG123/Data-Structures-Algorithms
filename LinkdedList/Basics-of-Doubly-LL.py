@@ -128,11 +128,15 @@ def deleteKthNodeOfDoublyLL(head, k):
 
     # If the k-th node is the head
     if temp.back is None:
-        return deleteHeadOfDoublyLL(head)
+        head = temp.next  # Move head to the next node
+        if head:
+            head.back = None  # Update the new head's back pointer
+        return head
     
     # If the k-th node is the tail
     if temp.next is None:
-        return deleteTailOfDoublyLL(head)
+        temp.back.next = None  # Update the previous node's next pointer
+        return head
 
     # General case: Deleting a node in the middle
     prev = temp.back
@@ -151,4 +155,39 @@ head = deleteKthNodeOfDoublyLL(head,2)
 
 # Print the doubly linked list after deleting kth node
 print("Doubly linked list after deleting kth node:")
+printDoublyLL(head)
+
+
+# 4.Delete given node of doubly linked list
+def deleteNodeOfDoublyLL(node):
+    if node is None:  # Handle the case if the node is None
+        return
+    
+    prev = node.back
+    front = node.next
+    
+    # If node is the head (i.e., it has no previous node)
+    if prev is None:
+        if front is not None:
+            front.back = None
+        node.next = None
+        return front  # Return the new head of the list
+    
+    # If node is the tail (i.e., it has no next node)
+    if front is None:
+        prev.next = None
+        node.back = None
+        return
+    
+    # General case: Deleting a node in the middle
+    prev.next = front
+    front.back = prev
+    
+    # Cleanup the current node
+    node.next = None
+    node.back = None
+
+deleteNodeOfDoublyLL(fourth)
+# Print the doubly linked list after deleting node
+print("Doubly linked list after deleting given node:")
 printDoublyLL(head)
