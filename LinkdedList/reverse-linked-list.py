@@ -31,6 +31,34 @@ def printLinkedList(head):
 print("Original linked list is:")
 printLinkedList(head)
 
+# Iterative Approaches - 
+
+# Approach1
+def reverseLinkedList(head):
+    stack = []
+    temp = head
+    
+    while temp is not None:
+        stack.append(temp)
+        temp = temp.next
+    
+    head = stack.pop()
+    temp = head
+    while stack:
+        temp.next = stack.pop()
+        temp = temp.next
+        
+    temp.next = None #setting last node to None
+    return head
+
+head = reverseLinkedList(head)
+print("Linked list after reverse:")
+printLinkedList(head)
+
+# TC = 0(N) for STEP1 and for STEP2 0(N) = 0(2N)
+# SC = 0(N)
+
+# Approach2
 def reverseLinkedList(head):
     prev = None
     curr = head
@@ -47,5 +75,8 @@ head = reverseLinkedList(head)
 
 print("Linked list after reverse:")
 printLinkedList(head)
+
+# TC = 0(N)
+# SC = 0(1)
 
 
