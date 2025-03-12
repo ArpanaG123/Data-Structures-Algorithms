@@ -12,3 +12,30 @@
 # 3.Perfect BT
 # 4.Balanced BT
 # 5.Degenerate Tree
+
+# Binary Tree representation 
+
+class TreeNode:
+    def __init__(self,val):
+        self.val = val
+        self.right = None
+        self.left = None
+
+# Create the root node
+root = TreeNode(1)
+
+# Manually add child nodes
+root.left = TreeNode(2)
+root.right = TreeNode(3)
+
+# Add children to the left child of root
+root.left.left = TreeNode(4)
+root.left.right = TreeNode(5)
+
+# Add children to the right child of root
+root.right.left = TreeNode(6)
+root.right.right = TreeNode(7)
+
+# Binary tree traversal
+# BFS(Level order traversal)
+# DFS(Inorder + preorder + postOrder traversal)
