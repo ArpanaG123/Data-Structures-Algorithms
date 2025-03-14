@@ -21,3 +21,32 @@ class Solution:
     
 # TC = 0(N)
 # SC = 0(N)
+
+
+# Iterative approach
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+class Solution:
+    def inorderTraversal(self, root):
+        inorder = []
+        st = []
+        current = root
+
+        while current or st:
+            # Traverse to the leftmost node
+            while current:
+                st.append(current)  # Push the current node to the stack
+                current = current.left
+
+            # Process the node
+            current = st.pop()  # Pop the node from the stack
+            inorder.append(current.val)  # Append its value to the result
+
+            # Now move to the right subtree
+            current = current.right
+
+        return inorder        

@@ -6,6 +6,7 @@
 # root = [1,null,2,3]
 # Output: [1,2,3]
 
+# Recursive Approach
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -21,3 +22,30 @@ class Solution:
     
 # TC = 0(N)
 # SC = 0(N)
+
+# Iterative Approach
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+class Solution:
+    def preorderTraversal(self, root):
+        preorder = []
+
+        if root is None:
+            return []
+        st = []
+        st.append(root)
+
+        while len(st) != 0:
+            root = st.pop()
+            preorder.append(root.val)
+
+            if root.right:
+                st.append(root.right)
+
+            if root.left:
+                st.append(root.left)
+        return preorder
