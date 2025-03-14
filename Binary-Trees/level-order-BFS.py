@@ -46,4 +46,28 @@ class Solution:
 # TC = 0(N)
 # SC = 0(N)
 
+# Approach Iterative
+class Node:
+    def init(self,val):
+        self.val = val
+        self.left = None
+        self.right = None
+
+class Solution:
+    def levelOrderTraversal(self,root):
+        # code here
+        ans = []
+        st = []
+        curr = root
+
+        while curr or st:
+            while curr:
+                st.append(curr)
+                curr = curr.left
+            
+            curr = st.pop()
+            ans.append(curr.val)
+            curr = curr.right
+        return ans
+
         
